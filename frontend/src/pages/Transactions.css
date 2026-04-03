@@ -1,0 +1,96 @@
+/* Transactions.css */
+
+:root {
+  --bg-main: #0f172a;
+  --sidebar-bg: #1e293b;
+  --card-bg: #111827;
+  --accent: #3b82f6;
+  --success: #22c55e;
+  --error: #ef4444;
+  --text-primary: #e5e7eb;
+  --text-secondary: #94a3b8;
+  --border: rgba(255, 255, 255, 0.05);
+}
+
+/* Layout Reuse */
+.dashboard-container { display: flex; min-height: 100vh; background-color: var(--bg-main); color: var(--text-primary); }
+.sidebar { width: 260px; background-color: var(--sidebar-bg); position: fixed; height: 100vh; border-right: 1px solid var(--border); }
+.main-content { margin-left: 260px; flex: 1; padding: 40px; }
+
+.top-navbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.page-subtitle { color: var(--text-secondary); font-size: 0.9rem; margin-top: 5px; }
+
+/* Buttons */
+.btn-add { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+.btn-add:hover { background: #2563eb; transform: translateY(-2px); }
+
+.btn-submit { background: var(--accent); color: white; border: none; border-radius: 6px; padding: 12px; cursor: pointer; grid-column: span 2; font-weight: 600; }
+.btn-delete { background: rgba(239, 68, 68, 0.1); color: var(--error); border: 1px solid var(--error); padding: 5px 12px; border-radius: 6px; cursor: pointer; transition: 0.3s; font-size: 0.8rem; }
+.btn-delete:hover { background: var(--error); color: white; }
+
+/* Form Card */
+.form-card { background: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 30px; }
+.transaction-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.transaction-form input, .transaction-form select { background: #1e293b; border: 1px solid var(--border); color: white; padding: 12px; border-radius: 6px; outline: none; }
+.transaction-form input:focus { border-color: var(--accent); }
+.full-width { grid-column: span 2; }
+
+/* Table Styling */
+.table-card { background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.transaction-table { width: 100%; border-collapse: collapse; text-align: left; }
+.transaction-table th { background: rgba(255,255,255,0.02); padding: 15px; font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border); }
+.transaction-table td { padding: 18px 15px; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+.table-row:hover { background: rgba(255,255,255,0.02); }
+
+/* UI Elements */
+.badge { padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+.badge.income { background: rgba(34, 197, 94, 0.15); color: var(--success); }
+.badge.expense { background: rgba(239, 68, 68, 0.15); color: var(--error); }
+.category-tag { background: #1e293b; padding: 4px 8px; border-radius: 4px; color: var(--text-secondary); font-size: 0.85rem; }
+.amount-cell { font-weight: 700; font-family: 'Courier New', Courier, monospace; }
+.text-success { color: var(--success); }
+.text-error { color: var(--error); }
+.text-dim { color: var(--text-secondary); }
+.empty-state { text-align: center; color: var(--text-secondary); padding: 40px; }
+
+/* Animations */
+.slide-down { animation: slideDown 0.4s ease-out forwards; }
+.fade-in { animation: fadeIn 0.6s ease-in forwards; }
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+  .sidebar { width: 80px; }
+  .sidebar-logo, .nav-item span:not(.icon) { display: none; }
+  .main-content { margin-left: 80px; padding: 20px; }
+  .transaction-form { grid-template-columns: 1fr; }
+  .btn-submit, .full-width { grid-column: span 1; }
+}
+
+.btn-edit {
+  background: #3B82F6;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin-right: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-edit:hover {
+  opacity: 0.9;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 10px;
+}
