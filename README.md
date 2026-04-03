@@ -265,3 +265,18 @@ This project was developed as part of an internship assignment to demonstrate ba
 - Backend architecture
 
 The focus was on building a **clean, maintainable, and logically structured backend system**.
+
+## Screenshots
+
+### Home Page
+![Home Page](screenshots/homepage.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard1.png)
+![Dashboard](screenshots/dashboard2.png)
+
+### Transactions Management
+![Transactions](screenshots/transactions.png)
+
+### User Management
+![Users](screenshots/users.png)
